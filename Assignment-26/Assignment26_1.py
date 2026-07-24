@@ -1,6 +1,5 @@
 class Demo:
-    Value = 100     # Class variable
-
+    Value = 100     
     def __init__(self, no1, no2):
         self.no1 = no1
         self.no2 = no2
