@@ -1,0 +1,19 @@
+import schedule
+import time
+from datetime import datetime
+
+def CreateLog():
+    filename = "MarvellousLog_" + datetime.now().strftime("%d_%m_%Y_%H_%M_%S") + ".txt"
+
+    with open(filename, "w") as f:
+        f.write("Log file created successfully.\n")
+        f.write("Creation Time: ")
+        f.write(datetime.now().strftime("%d-%m-%Y %I:%M:%S %p"))
+
+    print(filename, "created successfully.")
+
+schedule.every(10).minutes.do(CreateLog)
+
+while True:
+    schedule.run_pending()
+    time.sleep(1)
